@@ -221,7 +221,7 @@ fancy_echo "Installing foreman ..."
 ### end mac-components/heroku
 
 fancy_echo "Installing GitHub CLI client ..."
-  brew_install_or_upgrade 'hub'
+  brew_install_or_upgrade 'gh'
 ### end mac-components/github
 
 if ! command -v rcup &>/dev/null; then

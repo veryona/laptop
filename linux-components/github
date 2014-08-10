@@ -1,3 +1,13 @@
-fancy_echo "Installing GitHub CLI client ..."
-  curl http://hub.github.com/standalone -sLo ~/.bin/hub
-  chmod +x ~/.bin/hub
+# fancy_echo "Installing GitHub CLI client ..."
+  version=$(curl https://github.com/jingweno/gh/releases/latest -s | cut -d'v' -f2 | cut -d'"' -f1)
+
+  if test "$(uname -m)" = "x86_64" ; then
+    arch="amd64"
+  else
+    arch="i386"
+  fi
+
+  url="https://github.com/jingweno/gh/releases/download/v${version}/gh_${version}_${arch}.deb"
+  curl $url -sLo ~/.bin/gh.deb
+  sudo dpkg -i ~/.bin/gh.deb
+  chmod +x ~/.bin/gh
