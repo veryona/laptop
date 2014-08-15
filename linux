@@ -46,7 +46,7 @@ fancy_echo "Updating system packages ..."
     sudo apt-get install -y aptitude
   fi
 
-###  sudo aptitude update
+
 ### end linux-components/debian-package-update
 
 fancy_echo "Installing git, for source control management ..."
